@@ -2,7 +2,7 @@
 /*
 Plugin Name: Paid Memberships Pro - Kit Add On
 Plugin URI: https://www.paidmembershipspro.com/add-ons/pmpro-kit-add-on/
-Description: TBD
+Description: Integrate with Kit to add and tag members as email list subscribers.
 Version: 0.1
 Author: Paid Memberships Pro
 Author URI: https://www.paidmembershipspro.com
