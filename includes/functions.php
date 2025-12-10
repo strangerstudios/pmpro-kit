@@ -152,7 +152,7 @@ function pmprokit_update_subscriber_for_user( $user_id ) {
 function pmprokit_enqueue_sync_for_user( $user_id ) {
     // Check if we should process the change immediately.
     $options = get_option( 'pmprokit_options', array() );
-    if ( ! empty( $options['disable_async'] ) ) {
+    if ( ! empty( $options['enable_async'] ) && 'no' === $options['enable_async'] ) {
         pmprokit_update_subscriber_for_user( $user_id );
         return;
     }
