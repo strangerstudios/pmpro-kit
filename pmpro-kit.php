@@ -16,6 +16,16 @@ include_once dirname(__FILE__) . '/includes/migration.php'; // Code to migrate f
 include_once dirname(__FILE__) . '/classes/class-pmpro-kit-api-wrapper.php'; // API wrapper class.
 
 /**
+ * Load CSS and JS files.
+ *
+ * @since TBD
+ */
+function pmprokit_scripts() {
+	wp_enqueue_style( 'pmprokit', plugins_url( 'css/pmprokit.css', __FILE__ ), NULL, '' );
+}
+add_action( 'admin_enqueue_scripts', 'pmprokit_scripts' );
+
+/**
  * Function to add links to the plugin row meta.
  *
  * @since TBD

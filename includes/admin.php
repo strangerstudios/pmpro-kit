@@ -132,7 +132,7 @@ function pmprokit_settings_page() {
                                     <?php
                                     $selected_tags = isset( $options['level_tags_0'] ) ? (array) $options['level_tags_0'] : array();
                                     ?>
-                                    <div>
+                                    <div <?php if ( count( $tags ) > 5 ) { echo 'class="pmprokit-checkbox-list-scrollable"'; } ?>>
                                         <?php
                                         foreach ( $tags as $tag ) {
                                             $checked = in_array( $tag['id'], $selected_tags, true ) ? 'checked' : '';
@@ -157,7 +157,7 @@ function pmprokit_settings_page() {
                                         <?php
                                         $selected_tags = isset( $options[ 'level_tags_' . $level->id ] ) ? (array) $options[ 'level_tags_' . $level->id ] : array();
                                         ?>
-                                        <div>
+                                        <div <?php if ( count( $tags ) > 5 ) { echo 'class="pmprokit-checkbox-list-scrollable"'; } ?>>
                                             <?php
                                             foreach ( $tags as $tag ) {
                                                 $checked = in_array( $tag['id'], $selected_tags, true ) ? 'checked' : '';
