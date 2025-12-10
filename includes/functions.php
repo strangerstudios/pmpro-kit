@@ -150,6 +150,14 @@ function pmprokit_update_subscriber_for_user( $user_id ) {
  * @param int $user_id The WordPress user ID.
  */
 function pmprokit_enqueue_sync_for_user( $user_id ) {
+    // Check if we should process the change immediately.
+    $options = get_option( 'pmprokit_options', array() );
+    if ( ! empty( $options['disable_async'] ) ) {
+        pmprokit_update_subscriber_for_user( $user_id );
+        return;
+    }
+
+    // Enqueue the task.
     PMPro_Action_Scheduler::instance()->maybe_add_task(
         'pmprokit_update_subscriber_for_user',
         array(

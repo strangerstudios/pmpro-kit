@@ -38,6 +38,7 @@ function pmprokit_settings_page() {
 
         // Sanitize and save options here.
         $options['api_key'] = $new_api_key;
+        $options['disable_async'] = empty( $_POST['disable_async'] ) ? 0 : 1;
 
         // Save level tag assignments if level tags were shown.
         if ( ! empty( $_POST['level_tags_shown'] ) ) {
@@ -81,6 +82,19 @@ function pmprokit_settings_page() {
                             <td>
                                 <input type="text" name="api_key" id="api_key" value="<?php echo esc_attr( isset( $options['api_key'] ) ? $options['api_key'] : '' ); ?>" class="regular-text">
                                 <p class="description"><a href="https://app.kit.com/account_settings/developer_settings" target="_blank" rel="noopener"><?php esc_html_e( 'Generate an V4 API Key in your Kit developer settings.', 'pmpro-kit' ); ?></a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="disable_async"><?php esc_html_e( 'Process Updates Asynchronously?', 'pmpro-kit' ); ?></label></th>
+                            <td>
+                                <?php
+                                $disable_async = isset( $options['disable_async'] ) ? $options['disable_async'] : 0;
+                                ?>
+                                <select name="disable_async" id="disable_async">
+                                    <option value="0" <?php selected( $disable_async, 0 ); ?>><?php esc_html_e( 'Yes, process updates asynchronously', 'pmpro-kit' ); ?></option>
+                                    <option value="1" <?php selected( $disable_async, 1 ); ?>><?php esc_html_e( 'No, process updates immediately', 'pmpro-kit' ); ?></option>
+                                </select>
+                                <p class="description"><small><?php esc_html_e( 'When enabled, subscriber updates and tag assignments will be processed in the background using Action Scheduler, which can help improve site performance during user profile updates and membership changes.', 'pmpro-kit' ); ?></small></p>
                             </td>
                         </tr>
                     </table>
