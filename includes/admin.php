@@ -39,6 +39,7 @@ function pmprokit_settings_page() {
         // Sanitize and save options here.
         $options['api_key'] = $new_api_key;
         $options['update_on_profile_save'] = empty( $_POST['update_on_profile_save'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['update_on_profile_save'] ) );
+        $options['enable_removing_tags'] = empty( $_POST['enable_removing_tags'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['enable_removing_tags'] ) );
         $options['enable_async'] = empty( $_POST['enable_async'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['enable_async'] ) );
 
 
@@ -98,6 +99,19 @@ function pmprokit_settings_page() {
                                     <option value="no" <?php selected( $update_on_profile_save, 'no' ); ?>><?php esc_html_e( 'No, do not update subscriber information or tags', 'pmpro-kit' ); ?></option>
                                 </select>
                                 <p class="description"><small><?php esc_html_e( 'Choose whether to update the subscriber information and tags in Kit when a user profile is saved in WordPress.', 'pmpro-kit' ); ?></small></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="enable_removing_tags"><?php esc_html_e( 'Allow Removing Tags?', 'pmpro-kit' ); ?></label></th>
+                            <td>
+                                <?php
+                                $enable_removing_tags = isset( $options['enable_removing_tags'] ) ? $options['enable_removing_tags'] : 'yes';
+                                ?>
+                                <select name="enable_removing_tags" id="enable_removing_tags">
+                                    <option value="yes" <?php selected( $enable_removing_tags, 'yes' ); ?>><?php esc_html_e( 'Yes, allow removing old tags', 'pmpro-kit' ); ?></option>
+                                    <option value="no" <?php selected( $enable_removing_tags, 'no' ); ?>><?php esc_html_e( 'No, do not allow removing tags', 'pmpro-kit' ); ?></option>
+                                </select>
+                                <p class="description"><small><?php esc_html_e( 'When enabled, tags that are no longer applicable to a user will be removed from their Kit subscriber profile.', 'pmpro-kit' ); ?></small></p>
                             </td>
                         </tr>
                         <tr>

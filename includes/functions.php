@@ -140,7 +140,9 @@ function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
     }
 
     // Remove tags.
-    if ( ! empty( $tags_to_remove ) ) {
+    $options = get_option( 'pmprokit_options', array() );
+    $enable_removing_tags = isset( $options['enable_removing_tags'] ) ? $options['enable_removing_tags'] : 'yes';
+    if ( 'no' !== $enable_removing_tags && ! empty( $tags_to_remove ) ) {
         foreach ( $tags_to_remove as $tag_id ) {
             $api_wrapper->remove_tag_from_subscriber( $tag_id, $subscriber_id );
         }
