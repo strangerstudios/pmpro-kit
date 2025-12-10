@@ -38,8 +38,9 @@ function pmprokit_settings_page() {
 
         // Sanitize and save options here.
         $options['api_key'] = $new_api_key;
-        $options['enable_async'] = empty( $_POST['enable_async'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['enable_async'] ) );
         $options['update_on_profile_save'] = empty( $_POST['update_on_profile_save'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['update_on_profile_save'] ) );
+        $options['enable_async'] = empty( $_POST['enable_async'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['enable_async'] ) );
+
 
         // Save level tag assignments if level tags were shown.
         if ( ! empty( $_POST['level_tags_shown'] ) ) {
@@ -86,19 +87,6 @@ function pmprokit_settings_page() {
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="disable_async"><?php esc_html_e( 'Process Updates Asynchronously?', 'pmpro-kit' ); ?></label></th>
-                            <td>
-                                <?php
-                                $enable_async = isset( $options['enable_async'] ) ? $options['enable_async'] : 'yes';
-                                ?>
-                                <select name="enable_async" id="enable_async">
-                                    <option value="yes" <?php selected( $enable_async, 'yes' ); ?>><?php esc_html_e( 'Yes, process updates asynchronously', 'pmpro-kit' ); ?></option>
-                                    <option value="no" <?php selected( $enable_async, 'no' ); ?>><?php esc_html_e( 'No, process updates immediately', 'pmpro-kit' ); ?></option>
-                                </select>
-                                <p class="description"><small><?php esc_html_e( 'When enabled, subscriber updates and tag assignments will be processed in the background using Action Scheduler, which can help improve site performance during user profile updates and membership changes.', 'pmpro-kit' ); ?></small></p>
-                            </td>
-                        </tr>
-                        <tr>
                             <th scope="row"><label for="update_on_profile_save"><?php esc_html_e( 'Update on Profile Save?', 'pmpro-kit' ); ?></label></th>
                             <td>
                                 <?php
@@ -110,6 +98,19 @@ function pmprokit_settings_page() {
                                     <option value="no" <?php selected( $update_on_profile_save, 'no' ); ?>><?php esc_html_e( 'No, do not update subscriber information or tags', 'pmpro-kit' ); ?></option>
                                 </select>
                                 <p class="description"><small><?php esc_html_e( 'Choose whether to update the subscriber information and tags in Kit when a user profile is saved in WordPress.', 'pmpro-kit' ); ?></small></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="disable_async"><?php esc_html_e( 'Process Updates Asynchronously?', 'pmpro-kit' ); ?></label></th>
+                            <td>
+                                <?php
+                                $enable_async = isset( $options['enable_async'] ) ? $options['enable_async'] : 'yes';
+                                ?>
+                                <select name="enable_async" id="enable_async">
+                                    <option value="yes" <?php selected( $enable_async, 'yes' ); ?>><?php esc_html_e( 'Yes, process updates asynchronously', 'pmpro-kit' ); ?></option>
+                                    <option value="no" <?php selected( $enable_async, 'no' ); ?>><?php esc_html_e( 'No, process updates immediately', 'pmpro-kit' ); ?></option>
+                                </select>
+                                <p class="description"><small><?php esc_html_e( 'When enabled, subscriber updates and tag assignments will be processed in the background using Action Scheduler, which can help improve site performance during user profile updates and membership changes.', 'pmpro-kit' ); ?></small></p>
                             </td>
                         </tr>
                     </table>
