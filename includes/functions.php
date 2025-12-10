@@ -5,10 +5,10 @@
  *
  * @since TBD
  *
- * @param int   $user_id The WordPress user ID.
+ * @param int  $user_id The WordPress user ID.
  * @param bool $update_tags Whether to update tags for the subscriber. Default true.
  */
-function pmprokit_update_subscriber_for_user( $user_id ) {
+function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
     // Make sure the user exists.
     $user = get_userdata( $user_id );
     if ( ! $user ) {
@@ -66,6 +66,11 @@ function pmprokit_update_subscriber_for_user( $user_id ) {
         // Save subscriber ID in user meta.
         $subscriber_id = intval( $subscriber['id'] );
         update_user_meta( $user_id, 'pmprokit_subscriber_id', $subscriber_id );
+    }
+
+    // If we are not updating tags, bail.
+    if ( ! $update_tags ) {
+        return;
     }
 
     // Get all tags for the current subscriber.
@@ -148,12 +153,13 @@ function pmprokit_update_subscriber_for_user( $user_id ) {
  * @since TBD
  *
  * @param int $user_id The WordPress user ID.
+ * @param bool $update_tags Whether to sync tags for the subscriber. Default true.
  */
-function pmprokit_enqueue_sync_for_user( $user_id ) {
+function pmprokit_enqueue_sync_for_user( $user_id, $update_tags = true ) {
     // Check if we should process the change immediately.
     $options = get_option( 'pmprokit_options', array() );
     if ( ! empty( $options['enable_async'] ) && 'no' === $options['enable_async'] ) {
-        pmprokit_update_subscriber_for_user( $user_id );
+        pmprokit_update_subscriber_for_user( $user_id, $update_tags );
         return;
     }
 
@@ -162,11 +168,29 @@ function pmprokit_enqueue_sync_for_user( $user_id ) {
         'pmprokit_update_subscriber_for_user',
         array(
             'user_id' => $user_id,
+            'update_tags' => $update_tags,
         ),
         'pmprokit_update_subscriber_tasks'
     );
 }
-add_action( 'profile_update', 'pmprokit_enqueue_sync_for_user', 10, 1 );
+
+/**
+ * When a user's profile is updated, sync their data to Kit.
+ *
+ * @since TBD
+ *
+ * @param int $user_id The WordPress user ID.
+ */
+function pmprokit_sync_user_on_profile_update( $user_id ) {
+    $options = get_option( 'pmprokit_options', array() );
+    $update_on_profile_save = isset( $options['update_on_profile_save'] ) ? $options['update_on_profile_save'] : 'yes';
+    if ( 'no' === $options['update_on_profile_save'] ) {
+        return;
+    }
+
+    pmprokit_enqueue_sync_for_user( $user_id, 'subscriber_only' !== $update_on_profile_save );
+}
+add_action( 'profile_update', 'pmprokit_sync_user_on_profile_update', 10, 1 );
 
 /**
  * When a user's membership level changes, sync their data to Kit.

@@ -39,6 +39,7 @@ function pmprokit_settings_page() {
         // Sanitize and save options here.
         $options['api_key'] = $new_api_key;
         $options['enable_async'] = empty( $_POST['enable_async'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['enable_async'] ) );
+        $options['update_on_profile_save'] = empty( $_POST['update_on_profile_save'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['update_on_profile_save'] ) );
 
         // Save level tag assignments if level tags were shown.
         if ( ! empty( $_POST['level_tags_shown'] ) ) {
@@ -95,6 +96,20 @@ function pmprokit_settings_page() {
                                     <option value="no" <?php selected( $enable_async, 'no' ); ?>><?php esc_html_e( 'No, process updates immediately', 'pmpro-kit' ); ?></option>
                                 </select>
                                 <p class="description"><small><?php esc_html_e( 'When enabled, subscriber updates and tag assignments will be processed in the background using Action Scheduler, which can help improve site performance during user profile updates and membership changes.', 'pmpro-kit' ); ?></small></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="update_on_profile_save"><?php esc_html_e( 'Update on Profile Save?', 'pmpro-kit' ); ?></label></th>
+                            <td>
+                                <?php
+                                $update_on_profile_save = isset( $options['update_on_profile_save'] ) ? $options['update_on_profile_save'] : 'yes';
+                                ?>
+                                <select name="update_on_profile_save" id="update_on_profile_save">
+                                    <option value="yes" <?php selected( $update_on_profile_save, 'yes' ); ?>><?php esc_html_e( 'Yes, update subscriber information and tags', 'pmpro-kit' ); ?></option>
+                                    <option value="subscriber_only" <?php selected( $update_on_profile_save, 'subscriber_only' ); ?>><?php esc_html_e( 'Yes, update subscriber information', 'pmpro-kit' ); ?></option>
+                                    <option value="no" <?php selected( $update_on_profile_save, 'no' ); ?>><?php esc_html_e( 'No, do not update subscriber information or tags', 'pmpro-kit' ); ?></option>
+                                </select>
+                                <p class="description"><small><?php esc_html_e( 'Choose whether to update the subscriber information and tags in Kit when a user profile is saved in WordPress.', 'pmpro-kit' ); ?></small></p>
                             </td>
                         </tr>
                     </table>
