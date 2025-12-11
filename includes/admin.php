@@ -41,7 +41,7 @@ function pmprokit_settings_page() {
         $options['update_on_profile_save'] = empty( $_POST['update_on_profile_save'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['update_on_profile_save'] ) );
         $options['enable_removing_tags'] = empty( $_POST['enable_removing_tags'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['enable_removing_tags'] ) );
         $options['enable_async'] = empty( $_POST['enable_async'] ) ? 'yes' : sanitize_text_field( wp_unslash( $_POST['enable_async'] ) );
-
+        $options['enable_debug_log'] = empty( $_POST['enable_debug_log'] ) ? 'no' : sanitize_text_field( wp_unslash( $_POST['enable_debug_log'] ) );
 
         // Save level tag assignments if level tags were shown.
         if ( ! empty( $_POST['level_tags_shown'] ) ) {
@@ -125,6 +125,35 @@ function pmprokit_settings_page() {
                                     <option value="no" <?php selected( $enable_async, 'no' ); ?>><?php esc_html_e( 'No, process updates immediately', 'pmpro-kit' ); ?></option>
                                 </select>
                                 <p class="description"><small><?php esc_html_e( 'When enabled, subscriber updates and tag assignments will be processed in the background using Action Scheduler, which can help improve site performance during user profile updates and membership changes.', 'pmpro-kit' ); ?></small></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label><?php esc_html_e( 'Enable Debug Log?', 'pmpro-kit' ); ?></label></th>
+                            <td>
+                                <?php
+                                $enable_debug_log = isset( $options['enable_debug_log'] ) ? $options['enable_debug_log'] : 'no';
+                                ?>
+                                <select name="enable_debug_log" id="enable_debug_log">
+                                    <option value="yes" <?php selected( $enable_debug_log, 'yes' ); ?>><?php esc_html_e( 'Yes, enable debug logging', 'pmpro-kit' ); ?></option>
+                                    <option value="no" <?php selected( $enable_debug_log, 'no' ); ?>><?php esc_html_e( 'No, disable debug logging', 'pmpro-kit' ); ?></option>
+                                </select>
+                                <p class="description">
+                                    <small>
+                                        <?php
+                                        esc_html_e( 'When enabled, debug information will be logged to help troubleshoot issues with the Kit integration.', 'pmpro-kit' );
+                                        if ( 'yes' === $enable_debug_log ) {
+                                            $log_file_link = add_query_arg(
+                                                array(
+                                                    'pmpro_restricted_file_dir' => 'logs',
+                                                    'pmpro_restricted_file'     => 'pmpro-kit.log',
+                                                ),
+                                                home_url()
+                                            );
+                                            echo ' <a href="' . esc_url( $log_file_link ) . '" target="_blank">' . esc_html__( 'Download log.', 'pmpro-kit' ) . '</a>';
+                                        }
+                                        ?>
+                                    </small>
+                                </p>
                             </td>
                         </tr>
                     </table>
