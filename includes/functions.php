@@ -15,11 +15,23 @@ function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
 		return;
 	}
 
-	// Set up API wrapper.
-	$api_wrapper = PMPro_Kit_API_Wrapper::get_instance();
-
 	// Build logging message.
 	$log = "Updating subscriber for user ID {$user_id} (email: {$user->user_email}). ";
+
+	// Get subscriber ID from user meta.
+	$subscriber_id = get_user_meta( $user_id, 'pmprokit_subscriber_id', true );
+	$log .= "Current subscriber ID: " . ( empty( $subscriber_id ) ? 'none' : intval( $subscriber_id ) ) . ". ";
+
+	// If the user does not have a membership level and are not already a subscriber, bail.
+	$user_levels = pmpro_getMembershipLevelsForUser( $user_id );
+	if ( empty( $user_levels ) && empty( $subscriber_id ) ) {
+		$log .= "User has no membership levels and is not a subscriber. No action taken. ";
+		pmprokit_debug_log( $log );
+		return;
+	}
+
+	// Set up API wrapper.
+	$api_wrapper = PMPro_Kit_API_Wrapper::get_instance();
 
 	// Prepare subscriber data.
 	$subscriber_data = array(
@@ -38,18 +50,6 @@ function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
 	 */
 	$subscriber_data = apply_filters( 'pmprokit_subscriber_data', $subscriber_data, $user );
 	$log .= "New subscriber data: " . print_r( $subscriber_data, true ) . ". ";
-
-	// Get subscriber ID from user meta.
-	$subscriber_id = get_user_meta( $user_id, 'pmprokit_subscriber_id', true );
-	$log .= "Current subscriber ID: " . ( empty( $subscriber_id ) ? 'none' : intval( $subscriber_id ) ) . ". ";
-
-	// If the user does not have a membership level and are not already a subscriber, bail.
-	$user_levels = pmpro_getMembershipLevelsForUser( $user_id );
-	if ( empty( $user_levels ) && empty( $subscriber_id ) ) {
-		$log .= "User has no membership levels and is not a subscriber. No action taken. ";
-		pmprokit_debug_log( $log );
-		return;
-	}
 
 	// Update existing subscriber if we have a subscriber ID.
 	if ( ! empty( $subscriber_id ) ) {
