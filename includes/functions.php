@@ -43,6 +43,14 @@ function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
 	$subscriber_id = get_user_meta( $user_id, 'pmprokit_subscriber_id', true );
 	$log .= "Current subscriber ID: " . ( empty( $subscriber_id ) ? 'none' : intval( $subscriber_id ) ) . ". ";
 
+	// If the user does not have a membership level and are not already a subscriber, bail.
+	$user_levels = pmpro_getMembershipLevelsForUser( $user_id );
+	if ( empty( $user_levels ) && empty( $subscriber_id ) ) {
+		$log .= "User has no membership levels and is not a subscriber. No action taken. ";
+		pmprokit_debug_log( $log );
+		return;
+	}
+
 	// Update existing subscriber if we have a subscriber ID.
 	if ( ! empty( $subscriber_id ) ) {
 		// Update existing subscriber.
@@ -120,17 +128,10 @@ function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
 
 	// Get tags to assign based on user's membership levels.
 	$new_tag_ids = array();
-	$user_levels = pmpro_getMembershipLevelsForUser( $user_id );
-	if ( empty( $user_levels ) ) {
-		// User has no levels, only assign tags for level 0 (no level).
-		$new_tag_ids = $options['level_tags_0'] ?? array();
-	} else {
-		// User has levels, assign tags for each level.
-		foreach ( $user_levels as $level ) {
-			$key = 'level_tags_' . $level->id;
-			if ( ! empty( $options[ $key ] ) && is_array( $options[ $key ] ) ) {
-				$new_tag_ids = array_merge( $new_tag_ids, $options[ $key ] );
-			}
+	foreach ( $user_levels as $level ) {
+		$key = 'level_tags_' . $level->id;
+		if ( ! empty( $options[ $key ] ) && is_array( $options[ $key ] ) ) {
+			$new_tag_ids = array_merge( $new_tag_ids, $options[ $key ] );
 		}
 	}
 	$new_tag_ids = array_unique( $new_tag_ids );

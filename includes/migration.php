@@ -56,7 +56,6 @@ function pmprokit_migrate_legacy_options( $default_value ) {
 		// so just migrate level tag assignments.
 		$pmpro_levels    = pmpro_getAllLevels( true );
 		$pmpro_level_ids = wp_list_pluck( $pmpro_levels, 'id' );
-		$pmpro_level_ids[] = 0; // Include level 0 (no level).
 		$all_tag_ids = array();
 		foreach ( $pmpro_level_ids as $level_id ) {
 			$old_key = 'convertkit-mapping-' . $level_id;

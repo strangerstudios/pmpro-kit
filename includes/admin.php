@@ -45,8 +45,7 @@ function pmprokit_settings_page() {
 
 		// Save level tag assignments if level tags were shown.
 		if ( ! empty( $_POST['level_tags_shown'] ) ) {
-			$options['level_tags_0'] = empty( $_POST['level_tags_0'] ) ? array() : array_map( 'intval', wp_unslash( (array) $_POST['level_tags_0'] ) );
-			$options['level_tags_all'] = array_merge( $options['level_tags_0'], array() ); // For all levels.
+			$options['level_tags_all'] = array();
 			foreach ( $pmpro_levels as $level ) {
 				$key = 'level_tags_' . $level->id;
 				$options[ $key ] = empty( $_POST[ $key ] ) ? array() : array_map( 'intval', wp_unslash( (array) $_POST[ $key ] ) );
@@ -178,35 +177,13 @@ function pmprokit_settings_page() {
 						// Loop through PMPro levels and allow assigning tags to each level via checkboxes.
 						?>
 						<p>
-							<?php esc_html_e( 'Below is a list of the defined Membership Levels in Paid Memberships Pro. Assign a membership level to a Kit tag that will be assigned to members of that level.', 'pmpro-kit' ); ?>
+							<?php echo esc_html__( 'Select the Kit tags to assign to members when they are added to each membership level.', 'pmpro-kit' ) . ' '; ?>
 							<a href="<?php echo esc_url( add_query_arg( 'pmprokit_refresh_tags', '1' ) ); ?>">
 								<?php esc_html_e( 'Click here to refresh tags.', 'pmpro-kit' ); ?>
 							</a>
 						</p>
 						<input type="hidden" name="level_tags_shown" value="1">
 						<table class="form-table">
-							<tr>
-								<th scope="row"><?php esc_html_e( 'Non-Members', 'pmpro-kit' ); ?></th>
-								<td>
-									<?php
-									$selected_tags = isset( $options['level_tags_0'] ) ? (array) $options['level_tags_0'] : array();
-									?>
-									<div <?php if ( count( $tags ) > 5 ) { echo 'class="pmprokit-checkbox-list-scrollable"'; } ?>>
-										<?php
-										foreach ( $tags as $tag ) {
-											$checked = in_array( $tag['id'], $selected_tags, true ) ? 'checked' : '';
-											?>
-											<label>
-												<input type="checkbox" name="level_tags_0[]" value="<?php echo esc_attr( $tag['id'] ); ?>" <?php echo esc_attr( $checked ); ?>>
-												<?php echo esc_html( $tag['name'] ); ?>
-											</label><br>
-											<?php
-										}
-										?>
-									</div>
-									<p class="description"><small><?php esc_html_e( 'Tags assigned here will be applied to users without an active membership level.', 'pmpro-kit' ); ?></small></p>
-								</td>
-							</tr>
 							<?php
 							foreach ( $pmpro_levels as $level ) {
 								?>
