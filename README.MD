@@ -11,7 +11,7 @@ Integrate with Kit to add and tag members as email list subscribers.
 For more information please visit [www.paidmembershipspro.com/add-ons/convertkit-integration/](https://www.paidmembershipspro.com/add-ons/convertkit-integration/)
 
 ## Installation ##
-For detailed installation steps, visit the [documentation](https://www.paidmembershipspro.com/add-ons/pmpro-kit-add-on/) page.
+For detailed installation steps, visit the [documentation](https://www.paidmembershipspro.com/add-ons/convertkit-integration/) page.
 
 1. Download the current development ZIP file directly: `https://github.com/strangerstudios/pmpro-kit/archive/dev.zip`
 
