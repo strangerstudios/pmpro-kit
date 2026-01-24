@@ -1,13 +1,15 @@
 <?php
-/*
-Plugin Name: Paid Memberships Pro - Kit Add On
-Plugin URI: https://www.paidmembershipspro.com/add-ons/convertkit-integration/
-Description: Connect Paid Memberships Pro to Kit to add members as subscribers and manage tags automatically.
-Version: 0.1
-Author: Paid Memberships Pro
-Author URI: https://www.paidmembershipspro.com
-Text Domain: pmpro-kit
-Domain Path: /languages
+/**
+ * Plugin Name: Paid Memberships Pro - Kit Add On
+ * Plugin URI: https://www.paidmembershipspro.com/add-ons/convertkit-integration/
+ * Description: Connect Paid Memberships Pro to Kit to add members as subscribers and manage tags automatically.
+ * Version: 0.1
+ * Author: Paid Memberships Pro
+ * Author URI: https://www.paidmembershipspro.com
+ * Text Domain: pmpro-kit
+ * Domain Path: /languages
+ * License: GPLv3 or later
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
 
 define( 'PMPRO_KIT_DIR', plugin_dir_path( __FILE__ ) );
