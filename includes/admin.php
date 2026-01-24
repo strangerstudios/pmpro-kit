@@ -89,7 +89,7 @@ function pmprokit_settings_page() {
 							<td>
 								<input type="text" name="api_key" id="api_key" value="<?php echo esc_attr( isset( $options['api_key'] ) ? $options['api_key'] : '' ); ?>" class="regular-text">
 								<p class="description">
-									<?php esc_html_e( 'Your V4 API is used to connect your Kit account to this membership site.', 'pmpro-kit' ); ?>
+									<?php esc_html_e( 'Your V4 API key is used to connect your Kit account to this membership site.', 'pmpro-kit' ); ?>
 									<a href="https://app.kit.com/account_settings/developer_settings" target="_blank" rel="noopener"><?php esc_html_e( 'Create a V4 API key in your Kit developer settings.', 'pmpro-kit' ); ?></a>
 								</p>
 							</td>
