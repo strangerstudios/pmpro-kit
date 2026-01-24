@@ -5,11 +5,11 @@ Requires at least: 5.0
 Tested up to: 6.7
 Stable tag: 0.1
 
-Integrate with Kit to add and tag members as email list subscribers.
+Connect Paid Memberships Pro to Kit to add members as subscribers and manage tags automatically.
 
 == Description ==
 
-The Kit Add On for Paid Memberships Pro allows you to integrate your membership site with [Kit](https://kit.com/), an email marketing and automation platform. With this add on, you can automatically add new members to your Kit email lists and assign tags based on their membership levels.
+The Kit Add On for Paid Memberships Pro integrates your membership site with [Kit](https://kit.com/), an email marketing and automation platform. With this Add On, you can automatically add new members as subscribers and assign tags based on their membership level.
 
 == Installation ==
 
