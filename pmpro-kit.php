@@ -24,10 +24,8 @@ include_once PMPRO_KIT_DIR . 'classes/class-pmpro-kit-api-wrapper.php'; // API w
  * @since TBD
  */
 function pmpro_kit_activation() {
-	// If this plugin is being acitvated, show a notice.
-	if ( current_filter() === 'activate_' . PMPRO_KIT_BASENAME ) {
-		set_transient( 'pmpro-kit-admin-notice', true, 5 );
-	}
+	// Set a transient so we can show a notice after activation.
+	set_transient( 'pmpro-kit-admin-notice', true, 5 );
 }
 register_activation_hook( PMPRO_KIT_BASENAME, 'pmpro_kit_activation' );
 
