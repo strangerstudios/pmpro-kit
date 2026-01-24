@@ -66,10 +66,10 @@ function pmprokit_settings_page() {
 	}
 	?>
 	<div class="wrap pmpro_admin">
-		<h1><?php esc_html_e( 'Kit Integration Settings', 'pmpro-kit' ); ?></h1>
+		<h1><?php esc_html_e( 'Kit Settings', 'pmpro-kit' ); ?></h1>
 		<p><?php
-			$pmprokit_settings_link = '<a title="' . esc_attr__( 'Paid Memberships Pro - Kit Integration Documentation', 'pmpro-kit' ) . '" target="_blank" rel="nofollow noopener" href="https://www.paidmembershipspro.com/add-ons/convertkit-integration/?utm_source=plugin&utm_medium=pmpro-kit&utm_campaign=add-ons&utm_content=pmpro-kit-settings">' . esc_html__( 'Kit Integration documentation', 'pmpro-kit' ) . '</a>';
-			// translators: %s: Link to Kit Integration documentation.
+			$pmprokit_settings_link = '<a title="' . esc_attr__( 'Paid Memberships Pro - Kit Add On Documentation', 'pmpro-kit' ) . '" target="_blank" rel="nofollow noopener" href="https://www.paidmembershipspro.com/add-ons/convertkit-integration/?utm_source=plugin&utm_medium=pmpro-kit&utm_campaign=add-ons&utm_content=pmpro-kit-settings">' . esc_html__( 'Kit Add On documentation', 'pmpro-kit' ) . '</a>';
+			// translators: %s: Link to Kit Add On documentation.
 			printf( esc_html__('Learn more about these settings in the %s.', 'pmpro-kit' ), $pmprokit_settings_link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?></p>
 		<form method="post" action="">

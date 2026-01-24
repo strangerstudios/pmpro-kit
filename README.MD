@@ -1,6 +1,6 @@
-![](pmpro-kit-banner.jpg)
+![](pmpro-kit-banner.png)
 
-# [Paid Memberships Pro - Kit Add On](https://www.paidmembershipspro.com/add-ons/pmpro-kit-add-on/) #
+# [Paid Memberships Pro - Kit Add On](https://www.paidmembershipspro.com/add-ons/convertkit-integration/) #
 [comment]: # (Generate badges from shields.io, only works for .org plugins to get other stats etc. We'd have to create our own endpoints for Premium plugins)
 
 ![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg?style=flat-square)
@@ -8,7 +8,7 @@
 ### Welcome to the Kit Add On GitHub Repository
 Integrate with Kit to add and tag members as email list subscribers.
 
-For more information please visit [www.paidmembershipspro.com/add-ons/pmpro-kit-add-on/](https://www.paidmembershipspro.com/add-ons/pmpro-kit-add-on/)
+For more information please visit [www.paidmembershipspro.com/add-ons/convertkit-integration/](https://www.paidmembershipspro.com/add-ons/convertkit-integration/)
 
 ## Installation ##
 For detailed installation steps, visit the [documentation](https://www.paidmembershipspro.com/add-ons/pmpro-kit-add-on/) page.
@@ -21,7 +21,7 @@ For detailed installation steps, visit the [documentation](https://www.paidmembe
 If you find an issue/bug, let us know by [creating a detailed GitHub issue](https://github.com/strangerstudios/pmpro-kit/issues/new).
 
 ## Support ##
-This is a developer's portal for Kit Add On. We do not offer support on this channel. **Any support related questions should be directed to [www.paidmembershipspro.com/add-ons/pmpro-kit-add-on/](https://www.paidmembershipspro.com/add-ons/pmpro-kit-add-on/).**
+This is a developer's portal for Kit Add On. We do not offer support on this channel. **Any support related questions should be directed to [www.paidmembershipspro.com/add-ons/convertkit-integration/](https://www.paidmembershipspro.com/add-ons/convertkit-integration/).**
 
 ## Contributing to Kit Add On ##
 We encourage and welcome any contribution to Kit Add On. Please read the [guidelines for contributing](https://github.com/strangerstudios/paid-memberships-pro/blob/dev/.github/CONTRIBUTING.md) to this repository.
