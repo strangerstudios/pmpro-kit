@@ -3,7 +3,7 @@
 # [Paid Memberships Pro - Kit Add On](https://www.paidmembershipspro.com/add-ons/convertkit-integration/) #
 [comment]: # (Generate badges from shields.io, only works for .org plugins to get other stats etc. We'd have to create our own endpoints for Premium plugins)
 
-![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg?style=flat-square)
+![License](https://img.shields.io/badge/license-GPL--3.0%2B-red.svg?style=flat-square)
 
 ### Welcome to the Kit Add On GitHub Repository
 Integrate with Kit to add and tag members as email list subscribers.
