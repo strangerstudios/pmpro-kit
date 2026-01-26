@@ -238,6 +238,56 @@ function pmprokit_sync_user_on_profile_update( $user_id ) {
 add_action( 'profile_update', 'pmprokit_sync_user_on_profile_update', 10, 1 );
 
 /**
+ * When user fields are saved from the PMPro Edit Member screen, sync their data to Kit.
+ *
+ * PMPro's user fields panel saves directly to user meta without firing profile_update,
+ * so we need to detect when a user-fields panel was saved and trigger the sync.
+ *
+ * This code runs at priority 20 to run after PMPro's save at priority 10.
+ *
+ * @since TBD
+ */
+function pmprokit_sync_user_on_edit_member_user_fields_save() {
+	// Check if we're on the pmpro-member page with a user-fields panel being saved.
+	if ( empty( $_REQUEST['page'] ) || 'pmpro-member' !== $_REQUEST['page'] ) {
+		return;
+	}
+
+	// Check that this is a POST request.
+	if ( empty( $_POST ) ) {
+		return;
+	}
+
+	// Check that a user-fields panel is being saved.
+	$panel_slug = empty( $_REQUEST['pmpro_member_edit_panel'] ) ? '' : sanitize_text_field( $_REQUEST['pmpro_member_edit_panel'] );
+	if ( empty( $panel_slug ) || strpos( $panel_slug, 'user-fields-' ) !== 0 ) {
+		return;
+	}
+
+	// Verify the nonce.
+	if ( empty( $_REQUEST['pmpro_member_edit_saved_panel_nonce'] ) || ! wp_verify_nonce( $_REQUEST['pmpro_member_edit_saved_panel_nonce'], 'pmpro_member_edit_saved_panel_' . $panel_slug ) ) {
+		return;
+	}
+
+	// Get the user ID.
+	$user_id = empty( $_REQUEST['user_id'] ) ? 0 : intval( $_REQUEST['user_id'] );
+	if ( empty( $user_id ) ) {
+		return;
+	}
+
+	// Check settings.
+	$options = get_option( 'pmprokit_options', array() );
+	$update_on_profile_save = isset( $options['update_on_profile_save'] ) ? $options['update_on_profile_save'] : 'yes';
+	if ( 'no' === $update_on_profile_save ) {
+		return;
+	}
+
+	// Sync the user.
+	pmprokit_enqueue_sync_for_user( $user_id, 'subscriber_only' !== $update_on_profile_save );
+}
+add_action( 'admin_init', 'pmprokit_sync_user_on_edit_member_user_fields_save', 20 );
+
+/**
  * When a user's membership level changes, sync their data to Kit.
  *
  * @since TBD
