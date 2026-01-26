@@ -61,6 +61,9 @@ function pmprokit_settings_page() {
 			pmprokit_get_all_tags( true );
 		}
 
+		// If debug logging was enabled, ensure the log file exists.
+		pmprokit_debug_log( 'PMPro Kit settings updated.' );
+
 		// Show a success message.
 		echo '<div class="updated"><p>' . esc_html__( 'Settings saved.', 'pmpro-kit' ) . '</p></div>';
 	}
