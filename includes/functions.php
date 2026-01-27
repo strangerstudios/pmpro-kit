@@ -229,7 +229,7 @@ function pmprokit_enqueue_sync_for_user( $user_id, $update_tags = true ) {
 function pmprokit_sync_user_on_profile_update( $user_id ) {
 	$options = get_option( 'pmprokit_options', array() );
 	$update_on_profile_save = isset( $options['update_on_profile_save'] ) ? $options['update_on_profile_save'] : 'yes';
-	if ( 'no' === $options['update_on_profile_save'] ) {
+	if ( 'no' === $update_on_profile_save ) {
 		return;
 	}
 
