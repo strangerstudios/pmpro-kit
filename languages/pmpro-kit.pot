@@ -1,0 +1,216 @@
+# Copyright (C) 2026 Paid Memberships Pro
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Paid Memberships Pro - Kit Add On 1.0\n"
+"Report-Msgid-Bugs-To: info@paidmembershipspro.com\n"
+"Last-Translator: Paid Memberships Pro <info@paidmembershipspro.com>\n"
+"Language-Team: Paid Memberships Pro <info@paidmembershipspro.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-01-27T16:50:43+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: pmpro-kit\n"
+
+#. Plugin Name of the plugin
+#: pmpro-kit.php
+msgid "Paid Memberships Pro - Kit Add On"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: pmpro-kit.php
+msgid "https://www.paidmembershipspro.com/add-ons/pmpro-kit-integration/"
+msgstr ""
+
+#. Description of the plugin
+#: pmpro-kit.php
+msgid "Connect Paid Memberships Pro to Kit to add members as subscribers and manage tags automatically."
+msgstr ""
+
+#. Author of the plugin
+#: pmpro-kit.php
+msgid "Paid Memberships Pro"
+msgstr ""
+
+#. Author URI of the plugin
+#: pmpro-kit.php
+msgid "https://www.paidmembershipspro.com"
+msgstr ""
+
+#: includes/admin.php:11
+#: includes/admin.php:12
+msgid "Kit"
+msgstr ""
+
+#: includes/admin.php:68
+msgid "Settings saved."
+msgstr ""
+
+#: includes/admin.php:72
+msgid "Kit Settings"
+msgstr ""
+
+#: includes/admin.php:74
+msgid "Paid Memberships Pro - Kit Add On Documentation"
+msgstr ""
+
+#: includes/admin.php:74
+msgid "Kit Add On documentation"
+msgstr ""
+
+#. translators: %s: Link to Kit Add On documentation.
+#: includes/admin.php:76
+#, php-format
+msgid "Learn more about these settings in the %s."
+msgstr ""
+
+#: includes/admin.php:83
+msgid "General Settings"
+msgstr ""
+
+#: includes/admin.php:90
+msgid "V4 API Key"
+msgstr ""
+
+#: includes/admin.php:95
+msgid "Your V4 API key is used to connect your Kit account to this membership site."
+msgstr ""
+
+#: includes/admin.php:96
+msgid "Create a V4 API key in your Kit developer settings."
+msgstr ""
+
+#: includes/admin.php:101
+msgid "Sync on Profile Update"
+msgstr ""
+
+#: includes/admin.php:107
+msgid "Yes, sync subscriber data and tags"
+msgstr ""
+
+#: includes/admin.php:108
+msgid "Yes, sync subscriber data only"
+msgstr ""
+
+#: includes/admin.php:109
+msgid "No, do not sync anything on profile update"
+msgstr ""
+
+#: includes/admin.php:111
+msgid "Choose what to sync to Kit when a user profile is updated in WordPress."
+msgstr ""
+
+#: includes/admin.php:115
+msgid "Remove Tags When Membership Changes"
+msgstr ""
+
+#: includes/admin.php:121
+msgid "Yes, remove tags that no longer apply"
+msgstr ""
+
+#: includes/admin.php:122
+msgid "No, never remove tags"
+msgstr ""
+
+#: includes/admin.php:124
+msgid "When enabled, the integration will remove tags in Kit when they no longer match the current membership."
+msgstr ""
+
+#: includes/admin.php:128
+msgid "Process Updates in the Background"
+msgstr ""
+
+#: includes/admin.php:134
+msgid "Yes, run updates in the background"
+msgstr ""
+
+#: includes/admin.php:135
+msgid "No, run updates immediately"
+msgstr ""
+
+#: includes/admin.php:137
+msgid "When enabled, subscriber updates and tag changes will run in the background using Action Scheduler. This can improve performance during checkout, profile updates, and membership changes."
+msgstr ""
+
+#: includes/admin.php:141
+msgid "Debug Logging"
+msgstr ""
+
+#: includes/admin.php:147
+msgid "Yes, enable debug logging"
+msgstr ""
+
+#: includes/admin.php:148
+msgid "No, disable debug logging"
+msgstr ""
+
+#: includes/admin.php:152
+msgid "When enabled, the integration will write debug details to the log to help troubleshoot issues."
+msgstr ""
+
+#: includes/admin.php:161
+msgid "Download log."
+msgstr ""
+
+#: includes/admin.php:174
+msgid "Assign Tags"
+msgstr ""
+
+#: includes/admin.php:182
+msgid "Error fetching tags from Kit."
+msgstr ""
+
+#: includes/admin.php:186
+msgid "No tags found in your Kit account."
+msgstr ""
+
+#: includes/admin.php:188
+#: includes/admin.php:198
+msgid "Click here to refresh tags"
+msgstr ""
+
+#: includes/admin.php:196
+msgid "Select the Kit tags to assign to members when they are added to each membership level."
+msgstr ""
+
+#: includes/admin.php:251
+msgid "Save Changes"
+msgstr ""
+
+#: includes/migration.php:17
+msgid "The Paid Memberships Pro - ConvertKit Integration Add On has been deactivated because its functionality has been replaced by the Paid Memberships Pro - Kit Add On. You can safely delete the Paid Memberships Pro - ConvertKit Integration Add On from your site."
+msgstr ""
+
+#: includes/migration.php:30
+msgid "The Paid Memberships Pro - ConvertKit Integration Add On is no longer needed because its functionality has been replaced by the Paid Memberships Pro - Kit Add On. If you have not already done so, you can safely delete the Paid Memberships Pro - ConvertKit Integration Add On from your site."
+msgstr ""
+
+#: pmpro-kit.php:45
+msgid "Thank you for activating the Kit Add On."
+msgstr ""
+
+#: pmpro-kit.php:47
+msgid "Click here to configure settings."
+msgstr ""
+
+#: pmpro-kit.php:67
+msgid "Settings"
+msgstr ""
+
+#: pmpro-kit.php:84
+msgid "View Documentation"
+msgstr ""
+
+#: pmpro-kit.php:84
+msgid "Docs"
+msgstr ""
+
+#: pmpro-kit.php:85
+msgid "Visit Customer Support Forum"
+msgstr ""
+
+#: pmpro-kit.php:85
+msgid "Support"
+msgstr ""
