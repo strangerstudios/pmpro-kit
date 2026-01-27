@@ -2,8 +2,8 @@
 Contributors: strangerstudios
 Tags: pmpro, paid memberships pro, search
 Requires at least: 5.0
-Tested up to: 6.7
-Stable tag: 0.1
+Tested up to: 6.9
+Stable tag: 1.0
 
 Connect Paid Memberships Pro to Kit to add members as subscribers and manage tags automatically.
 
@@ -17,5 +17,5 @@ The Kit Add On for Paid Memberships Pro integrates your membership site with [Ki
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
-= 0.1 =
+= 1.0 - 2026-01-27 =
 * First version.

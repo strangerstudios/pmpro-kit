@@ -3,7 +3,7 @@
 /**
  * Add Kit settings link to PMPro settings menu.
  *
- * @since TBD
+ * 1.0
  */
 function pmprokit_admin_menu() {
 	add_submenu_page(
@@ -20,7 +20,7 @@ add_action( 'admin_menu', 'pmprokit_admin_menu' );
 /**
  * Render the Kit settings page.
  *
- * @since TBD
+ * 1.0
  */
 function pmprokit_settings_page() {
 	// Get existing options.
@@ -71,7 +71,7 @@ function pmprokit_settings_page() {
 	<div class="wrap pmpro_admin">
 		<h1><?php esc_html_e( 'Kit Settings', 'pmpro-kit' ); ?></h1>
 		<p><?php
-			$pmprokit_settings_link = '<a title="' . esc_attr__( 'Paid Memberships Pro - Kit Add On Documentation', 'pmpro-kit' ) . '" target="_blank" rel="nofollow noopener" href="https://www.paidmembershipspro.com/add-ons/convertkit-integration/?utm_source=plugin&utm_medium=pmpro-kit&utm_campaign=add-ons&utm_content=pmpro-kit-settings">' . esc_html__( 'Kit Add On documentation', 'pmpro-kit' ) . '</a>';
+			$pmprokit_settings_link = '<a title="' . esc_attr__( 'Paid Memberships Pro - Kit Add On Documentation', 'pmpro-kit' ) . '" target="_blank" rel="nofollow noopener" href="https://www.paidmembershipspro.com/add-ons/pmpro-kit-integration/?utm_source=plugin&utm_medium=pmpro-kit&utm_campaign=add-ons&utm_content=pmpro-kit-settings">' . esc_html__( 'Kit Add On documentation', 'pmpro-kit' ) . '</a>';
 			// translators: %s: Link to Kit Add On documentation.
 			printf( esc_html__('Learn more about these settings in the %s.', 'pmpro-kit' ), $pmprokit_settings_link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?></p>

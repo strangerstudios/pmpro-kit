@@ -3,7 +3,7 @@
 /**
  * Disable the old ConvertKit integration plugin if it is active, and show an admin notice if needed.
  *
- * @since TBD
+ * 1.0
  */
 function pmprokit_check_for_legacy_plugin() {
 	$legacy_plugin_path = 'convertkit-paid-memberships-pro/convertkit-pmp.php';
@@ -41,7 +41,7 @@ add_action( 'admin_notices', 'pmprokit_check_for_legacy_plugin', 10, 2 );
 /**
  * If the pmprokit_options option does not exist, migrate settings from the old convertkit-paid-memberships-pro plugin.
  *
- * @since TBD
+ * 1.0
  *
  * @param mixed $default_value The default value for the option.
  * @return mixed The migrated options if applicable, otherwise the original default value.
@@ -83,7 +83,7 @@ add_filter( 'default_option_pmprokit_options', 'pmprokit_migrate_legacy_options'
 /**
  * If the subscriber ID is not set for a user, migrate it from the old convertkit-paid-memberships-pro plugin.
  *
- * @since TBD
+ * 1.0
  */
 function pmprokit_migrate_legacy_subscriber_id_for_user( $value, $user_id, $meta_key ) {
 	// If the meta key is not for the subscriber ID, bail.

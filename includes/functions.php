@@ -3,7 +3,7 @@
 /**
  * Update the Kit subscriber for a user.
  *
- * @since TBD
+ * 1.0
  *
  * @param int  $user_id The WordPress user ID.
  * @param bool $update_tags Whether to update tags for the subscriber. Default true.
@@ -43,7 +43,7 @@ function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
 	/**
 	 * Filter subscriber data before sending to Kit.
 	 *
-	 * @since TBD
+	 * 1.0
 	 *
 	 * @param array $subscriber_data The subscriber data to be sent to Kit.
 	 * @param WP_User $user The WordPress user object.
@@ -119,7 +119,7 @@ function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
 	/**
 	 * Filter the list of tag IDs that PMPro controls.
 	 *
-	 * @since TBD
+	 * 1.0
 	 *
 	 * @param array $controlled_tag_ids The list of tag IDs that PMPro controls.
 	 */
@@ -140,7 +140,7 @@ function pmprokit_update_subscriber_for_user( $user_id, $update_tags = true ) {
 	/**
 	 * Filter the list of tag IDs to assign to the subscriber.
 	 *
-	 * @since TBD
+	 * 1.0
 	 *
 	 * @param array $new_tag_ids The list of tag IDs to assign.
 	 * @param WP_User $user The WordPress user object.
@@ -195,7 +195,7 @@ add_action( 'pmprokit_update_subscriber_for_user', 'pmprokit_update_subscriber_f
 /**
  * Enqueue a task to sync user data to Kit.
  *
- * @since TBD
+ * 1.0
  *
  * @param int $user_id The WordPress user ID.
  * @param bool $update_tags Whether to sync tags for the subscriber. Default true.
@@ -222,7 +222,7 @@ function pmprokit_enqueue_sync_for_user( $user_id, $update_tags = true ) {
 /**
  * When a user's profile is updated, sync their data to Kit.
  *
- * @since TBD
+ * 1.0
  *
  * @param int $user_id The WordPress user ID.
  */
@@ -245,7 +245,7 @@ add_action( 'profile_update', 'pmprokit_sync_user_on_profile_update', 10, 1 );
  *
  * This code runs at priority 20 to run after PMPro's save at priority 10.
  *
- * @since TBD
+ * 1.0
  */
 function pmprokit_sync_user_on_edit_member_user_fields_save() {
 	// Check if we're on the pmpro-member page with a user-fields panel being saved.
@@ -290,7 +290,7 @@ add_action( 'admin_init', 'pmprokit_sync_user_on_edit_member_user_fields_save', 
 /**
  * When a user's membership level changes, sync their data to Kit.
  *
- * @since TBD
+ * 1.0
  *
  * @param array $old_users_and_levels Array of user IDs and their old levels.
  */
@@ -304,7 +304,7 @@ add_action( 'pmpro_after_all_membership_level_changes', 'pmprokit_sync_users_aft
 /**
  * Get all tags from Kit with caching.
  *
- * @since TBD
+ * 1.0
  *
  * @param bool $force_refresh Whether to force refresh the cached tags. Default false.
  * @return array|WP_Error List of tags or WP_Error on failure.
@@ -336,7 +336,7 @@ function pmprokit_get_all_tags( $force_refresh = false ) {
 /**
  * Get the location of the PMPro Kit log file.
  *
- * @since TBD
+ * 1.0
  *
  * @return string The log file path.
  */
@@ -347,7 +347,7 @@ function pmprokit_get_log_file_path() {
 /**
  * Maybe add an entry to the debug log.
  *
- * @since TBD
+ * 1.0
  *
  * @param string $message The log message.
  */

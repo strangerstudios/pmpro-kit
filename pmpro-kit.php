@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Paid Memberships Pro - Kit Add On
- * Plugin URI: https://www.paidmembershipspro.com/add-ons/convertkit-integration/
+ * Plugin URI: https://www.paidmembershipspro.com/add-ons/pmpro-kit-integration/
  * Description: Connect Paid Memberships Pro to Kit to add members as subscribers and manage tags automatically.
- * Version: 0.1
+ * Version: 1.0
  * Author: Paid Memberships Pro
  * Author URI: https://www.paidmembershipspro.com
  * Text Domain: pmpro-kit
@@ -23,7 +23,7 @@ include_once PMPRO_KIT_DIR . 'classes/class-pmpro-kit-api-wrapper.php'; // API w
 /**
  * Runs only when the plugin is activated.
  *
- * @since TBD
+ * 1.0
  */
 function pmpro_kit_activation() {
 	// Set a transient so we can show a notice after activation.
@@ -34,7 +34,7 @@ register_activation_hook( PMPRO_KIT_BASENAME, 'pmpro_kit_activation' );
 /**
  * Admin Notice on Activation.
  *
- * @since TBD
+ * 1.0
  */
 function pmpro_kit_admin_notice() {
 	// Check transient, if available display notice.
@@ -76,12 +76,12 @@ add_filter( 'plugin_action_links_' . PMPRO_KIT_BASENAME, 'pmpro_kit_plugin_actio
 /**
  * Function to add links to the plugin row meta.
  *
- * @since TBD
+ * 1.0
  */
 function pmpro_kit_plugin_row_meta( $links, $file ) {
 	if ( strpos( $file, 'pmpro-kit.php' ) !== false ) {
 		$new_links = array(
-			'<a href="' . esc_url( 'https://www.paidmembershipspro.com/add-ons/convertkit-integration/' ) . '" title="' . esc_attr__( 'View Documentation', 'pmpro-kit' ) . '">' . esc_html__( 'Docs', 'pmpro-kit' ) . '</a>',
+			'<a href="' . esc_url( 'https://www.paidmembershipspro.com/add-ons/pmpro-kit-integration/' ) . '" title="' . esc_attr__( 'View Documentation', 'pmpro-kit' ) . '">' . esc_html__( 'Docs', 'pmpro-kit' ) . '</a>',
 			'<a href="' . esc_url( 'https://www.paidmembershipspro.com/support/' ) . '" title="' . esc_attr__( 'Visit Customer Support Forum', 'pmpro-kit' ) . '">' . esc_html__( 'Support', 'pmpro-kit' ) . '</a>',
 		);
 		$links = array_merge( $links, $new_links );

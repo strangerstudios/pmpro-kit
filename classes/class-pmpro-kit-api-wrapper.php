@@ -27,7 +27,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * Get tags.
      *
-     * @since TBD
+     * 1.0
      *
      * @return array|WP_Error List of tags or WP_Error on failure.
      */
@@ -48,7 +48,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * Get subscriber.
      *
-     * @since TBD
+     * 1.0
      *
      * @param int $subscriber_id The Kit subscriber ID.
      * @return array|null|WP_Error Subscriber data if available, null if the user does not have a subscriber ID, or WP_Error on failure.
@@ -64,7 +64,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * Create subscriber.
      *
-     * @since TBD
+     * 1.0
      *
      * @param array $data The data for the new subscriber.
      * @return array|WP_Error The created subscriber data or WP_Error on failure.
@@ -80,7 +80,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * Update subscriber.
      *
-     * @since TBD
+     * 1.0
      *
      * @param int   $subscriber_id The Kit subscriber ID.
      * @param array $data          The data to update for the subscriber.
@@ -97,7 +97,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * List tags for subscriber.
      *
-     * @since TBD
+     * 1.0
      *
      * @param int $subscriber_id The Kit subscriber ID.
      * @return array|WP_Error The list of tags or WP_Error on failure.
@@ -113,7 +113,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * Tag a subscriber.
      *
-     * @since TBD
+     * 1.0
      *
      * @param int $tag_id The Kit tag ID.
      * @param int $subscriber_id The Kit subscriber ID.
@@ -126,7 +126,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * Remove a tag from a subscriber.
      *
-     * @since TBD
+     * 1.0
      *
      * @param int $tag_id The Kit tag ID.
      * @param int $subscriber_id The Kit subscriber ID.
@@ -139,7 +139,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * Unsubscribe subscriber.
      *
-     * @since TBD
+     * 1.0
      *
      * @param int $subscriber_id The Kit subscriber ID.
      * @return array|WP_Error The API response or WP_Error on failure.
@@ -151,7 +151,7 @@ class PMPro_Kit_API_Wrapper {
     /**
      * Send API requests to PMPro Kit endpoints.
      *
-     * @since TBD
+     * 1.0
      *
      * @param string $endpoint The API endpoint to send the request to.
      * @param string $method   The HTTP method to use for the request (e.g., 'GET', 'POST').
