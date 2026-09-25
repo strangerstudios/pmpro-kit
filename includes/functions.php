@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Update the Kit subscriber for a user.
  *
@@ -259,13 +263,13 @@ function pmprokit_sync_user_on_edit_member_user_fields_save() {
 	}
 
 	// Check that a user-fields panel is being saved.
-	$panel_slug = empty( $_REQUEST['pmpro_member_edit_panel'] ) ? '' : sanitize_text_field( $_REQUEST['pmpro_member_edit_panel'] );
+	$panel_slug = empty( $_REQUEST['pmpro_member_edit_panel'] ) ? '' : sanitize_text_field( wp_unslash( $_REQUEST['pmpro_member_edit_panel'] ) );
 	if ( empty( $panel_slug ) || strpos( $panel_slug, 'user-fields-' ) !== 0 ) {
 		return;
 	}
 
 	// Verify the nonce.
-	if ( empty( $_REQUEST['pmpro_member_edit_saved_panel_nonce'] ) || ! wp_verify_nonce( $_REQUEST['pmpro_member_edit_saved_panel_nonce'], 'pmpro_member_edit_saved_panel_' . $panel_slug ) ) {
+	if ( empty( $_REQUEST['pmpro_member_edit_saved_panel_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['pmpro_member_edit_saved_panel_nonce'] ) ), 'pmpro_member_edit_saved_panel_' . $panel_slug ) ) {
 		return;
 	}
 

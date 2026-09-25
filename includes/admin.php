@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Add Kit settings link to PMPro settings menu.
  *
@@ -31,7 +35,7 @@ function pmprokit_settings_page() {
 	$pmpro_levels = pmpro_sort_levels_by_order( $pmpro_levels );
 
 	// Handle form submission.
-	if ( isset( $_POST['pmprokit_settings_nonce'] ) && wp_verify_nonce( $_POST['pmprokit_settings_nonce'], 'pmprokit_save_settings' ) ) {
+	if ( isset( $_POST['pmprokit_settings_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['pmprokit_settings_nonce'] ) ), 'pmprokit_save_settings' ) ) {
 		// Check whether the API key has changed. If so, we may need to refresh tags.
 		$old_api_key = isset( $options['api_key'] ) ? $options['api_key'] : '';
 		$new_api_key = empty( $_POST['api_key'] ) ? '' : sanitize_text_field( wp_unslash( $_POST['api_key'] ) );

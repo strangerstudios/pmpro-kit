@@ -12,6 +12,10 @@
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 define( 'PMPRO_KIT_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PMPRO_KIT_BASENAME', plugin_basename( __FILE__ ) );
 
