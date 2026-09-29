@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Disable the old ConvertKit integration plugin if it is active, and show an admin notice if needed.
  *
@@ -21,7 +25,7 @@ function pmprokit_check_for_legacy_plugin() {
 			</p>
 		</div>
 		<?php
-	} elseif ( file_exists( WP_PLUGIN_DIR . '/' . $legacy_plugin_path ) && ! empty( $_REQUEST['page'] ) && 'pmpro-kit' === sanitize_text_field( $_REQUEST['page'] ) ) {
+	} elseif ( file_exists( WP_PLUGIN_DIR . '/' . $legacy_plugin_path ) && ! empty( $_REQUEST['page'] ) && 'pmpro-kit' === sanitize_text_field( wp_unslash( $_REQUEST['page'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only admin page check to decide whether to display a notice.
 		?>
 		<div class="notice notice-warning">
 			<p>
