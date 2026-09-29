@@ -3,7 +3,7 @@
  * Plugin Name: Paid Memberships Pro - Kit Add On
  * Plugin URI: https://www.paidmembershipspro.com/add-ons/pmpro-kit-integration/
  * Description: Connect Paid Memberships Pro to Kit to add members as subscribers and manage tags automatically.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Paid Memberships Pro
  * Author URI: https://www.paidmembershipspro.com
  * Text Domain: pmpro-kit
