@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Paid Memberships Pro - Kit Add On 1.0\n"
+"Project-Id-Version: Paid Memberships Pro - Kit Add On 1.0.1\n"
 "Report-Msgid-Bugs-To: info@paidmembershipspro.com\n"
 "Last-Translator: Paid Memberships Pro <info@paidmembershipspro.com>\n"
 "Language-Team: Paid Memberships Pro <info@paidmembershipspro.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-27T16:50:54+00:00\n"
+"POT-Creation-Date: 2026-09-29T16:23:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: pmpro-kit\n"
@@ -41,176 +41,221 @@ msgstr ""
 
 #: includes/admin.php:11
 #: includes/admin.php:12
+#: includes/admin.php:15
+#: includes/admin.php:16
 msgid "Kit"
 msgstr ""
 
 #: includes/admin.php:68
+#: includes/admin.php:72
 msgid "Settings saved."
 msgstr ""
 
 #: includes/admin.php:72
+#: includes/admin.php:76
 msgid "Kit Settings"
 msgstr ""
 
 #: includes/admin.php:74
+#: includes/admin.php:78
 msgid "Paid Memberships Pro - Kit Add On Documentation"
 msgstr ""
 
 #: includes/admin.php:74
+#: includes/admin.php:78
 msgid "Kit Add On documentation"
 msgstr ""
 
 #. translators: %s: Link to Kit Add On documentation.
 #: includes/admin.php:76
+#: includes/admin.php:80
 #, php-format
 msgid "Learn more about these settings in the %s."
 msgstr ""
 
 #: includes/admin.php:83
+#: includes/admin.php:87
 msgid "General Settings"
 msgstr ""
 
 #: includes/admin.php:90
+#: includes/admin.php:94
 msgid "V4 API Key"
 msgstr ""
 
 #: includes/admin.php:95
+#: includes/admin.php:99
 msgid "Your V4 API key is used to connect your Kit account to this membership site."
 msgstr ""
 
 #: includes/admin.php:96
+#: includes/admin.php:100
 msgid "Create a V4 API key in your Kit developer settings."
 msgstr ""
 
 #: includes/admin.php:101
+#: includes/admin.php:105
 msgid "Sync on Profile Update"
 msgstr ""
 
 #: includes/admin.php:107
+#: includes/admin.php:111
 msgid "Yes, sync subscriber data and tags"
 msgstr ""
 
 #: includes/admin.php:108
+#: includes/admin.php:112
 msgid "Yes, sync subscriber data only"
 msgstr ""
 
 #: includes/admin.php:109
+#: includes/admin.php:113
 msgid "No, do not sync anything on profile update"
 msgstr ""
 
 #: includes/admin.php:111
+#: includes/admin.php:115
 msgid "Choose what to sync to Kit when a user profile is updated in WordPress."
 msgstr ""
 
 #: includes/admin.php:115
+#: includes/admin.php:119
 msgid "Remove Tags When Membership Changes"
 msgstr ""
 
 #: includes/admin.php:121
+#: includes/admin.php:125
 msgid "Yes, remove tags that no longer apply"
 msgstr ""
 
 #: includes/admin.php:122
+#: includes/admin.php:126
 msgid "No, never remove tags"
 msgstr ""
 
 #: includes/admin.php:124
+#: includes/admin.php:128
 msgid "When enabled, the integration will remove tags in Kit when they no longer match the current membership."
 msgstr ""
 
 #: includes/admin.php:128
+#: includes/admin.php:132
 msgid "Process Updates in the Background"
 msgstr ""
 
 #: includes/admin.php:134
+#: includes/admin.php:138
 msgid "Yes, run updates in the background"
 msgstr ""
 
 #: includes/admin.php:135
+#: includes/admin.php:139
 msgid "No, run updates immediately"
 msgstr ""
 
 #: includes/admin.php:137
+#: includes/admin.php:141
 msgid "When enabled, subscriber updates and tag changes will run in the background using Action Scheduler. This can improve performance during checkout, profile updates, and membership changes."
 msgstr ""
 
 #: includes/admin.php:141
+#: includes/admin.php:145
 msgid "Debug Logging"
 msgstr ""
 
 #: includes/admin.php:147
+#: includes/admin.php:151
 msgid "Yes, enable debug logging"
 msgstr ""
 
 #: includes/admin.php:148
+#: includes/admin.php:152
 msgid "No, disable debug logging"
 msgstr ""
 
 #: includes/admin.php:152
+#: includes/admin.php:156
 msgid "When enabled, the integration will write debug details to the log to help troubleshoot issues."
 msgstr ""
 
 #: includes/admin.php:161
+#: includes/admin.php:165
 msgid "Download log."
 msgstr ""
 
 #: includes/admin.php:174
+#: includes/admin.php:178
 msgid "Assign Tags"
 msgstr ""
 
 #: includes/admin.php:182
+#: includes/admin.php:186
 msgid "Error fetching tags from Kit."
 msgstr ""
 
 #: includes/admin.php:186
+#: includes/admin.php:190
 msgid "No tags found in your Kit account."
 msgstr ""
 
 #: includes/admin.php:188
 #: includes/admin.php:198
+#: includes/admin.php:192
+#: includes/admin.php:202
 msgid "Click here to refresh tags"
 msgstr ""
 
 #: includes/admin.php:196
+#: includes/admin.php:200
 msgid "Select the Kit tags to assign to members when they are added to each membership level."
 msgstr ""
 
 #: includes/admin.php:251
+#: includes/admin.php:255
 msgid "Save Changes"
 msgstr ""
 
 #: includes/migration.php:17
+#: includes/migration.php:21
 msgid "The Paid Memberships Pro - ConvertKit Integration Add On has been deactivated because its functionality has been replaced by the Paid Memberships Pro - Kit Add On. You can safely delete the Paid Memberships Pro - ConvertKit Integration Add On from your site."
 msgstr ""
 
 #: includes/migration.php:30
+#: includes/migration.php:34
 msgid "The Paid Memberships Pro - ConvertKit Integration Add On is no longer needed because its functionality has been replaced by the Paid Memberships Pro - Kit Add On. If you have not already done so, you can safely delete the Paid Memberships Pro - ConvertKit Integration Add On from your site."
 msgstr ""
 
 #: pmpro-kit.php:45
+#: pmpro-kit.php:49
 msgid "Thank you for activating the Kit Add On."
 msgstr ""
 
 #: pmpro-kit.php:47
+#: pmpro-kit.php:51
 msgid "Click here to configure settings."
 msgstr ""
 
 #: pmpro-kit.php:67
+#: pmpro-kit.php:71
 msgid "Settings"
 msgstr ""
 
 #: pmpro-kit.php:84
+#: pmpro-kit.php:88
 msgid "View Documentation"
 msgstr ""
 
 #: pmpro-kit.php:84
+#: pmpro-kit.php:88
 msgid "Docs"
 msgstr ""
 
 #: pmpro-kit.php:85
+#: pmpro-kit.php:89
 msgid "Visit Customer Support Forum"
 msgstr ""
 
 #: pmpro-kit.php:85
+#: pmpro-kit.php:89
 msgid "Support"
 msgstr ""
